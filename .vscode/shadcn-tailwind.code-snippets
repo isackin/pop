@@ -1,0 +1,346 @@
+{
+  "shadcn Button": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": ["shadcn-button", "sbutton"],
+    "description": "shadcn Button with variant and size",
+    "body": [
+      "<Button variant=\"${1|default,outline,secondary,ghost,destructive,link|}\" size=\"${2|default,xs,sm,lg,icon|}\"${3: onClick={$4}}>",
+      "\t$5",
+      "</Button>"
+    ]
+  },
+  "shadcn Button Import": {
+    "scope": "typescriptreact,javascriptreact,typescript,javascript",
+    "prefix": ["import-button", "ibutton"],
+    "description": "Import shadcn Button",
+    "body": ["import { Button } from \"@/components/ui/button\""]
+  },
+  "shadcn Card": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": ["shadcn-card", "scard"],
+    "description": "shadcn Card layout",
+    "body": [
+      "<Card>",
+      "\t<CardHeader>",
+      "\t\t<CardTitle>$1</CardTitle>",
+      "\t\t<CardDescription>$2</CardDescription>",
+      "\t</CardHeader>",
+      "\t<CardContent>",
+      "\t\t$3",
+      "\t</CardContent>",
+      "\t<CardFooter>",
+      "\t\t$4",
+      "\t</CardFooter>",
+      "</Card>"
+    ]
+  },
+  "shadcn Card Import": {
+    "scope": "typescriptreact,javascriptreact,typescript,javascript",
+    "prefix": ["import-card", "icard"],
+    "description": "Import shadcn Card pieces",
+    "body": [
+      "import {",
+      "\tCard,",
+      "\tCardContent,",
+      "\tCardDescription,",
+      "\tCardFooter,",
+      "\tCardHeader,",
+      "\tCardTitle,",
+      "} from \"@/components/ui/card\""
+    ]
+  },
+  "shadcn Dialog": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": ["shadcn-dialog", "sdialog"],
+    "description": "shadcn Dialog with trigger",
+    "body": [
+      "<Dialog>",
+      "\t<DialogTrigger asChild>",
+      "\t\t<Button variant=\"outline\">$1</Button>",
+      "\t</DialogTrigger>",
+      "\t<DialogContent>",
+      "\t\t<DialogHeader>",
+      "\t\t\t<DialogTitle>$2</DialogTitle>",
+      "\t\t\t<DialogDescription>$3</DialogDescription>",
+      "\t\t</DialogHeader>",
+      "\t\t$4",
+      "\t\t<DialogFooter>",
+      "\t\t\t<Button type=\"submit\">$5</Button>",
+      "\t\t</DialogFooter>",
+      "\t</DialogContent>",
+      "</Dialog>"
+    ]
+  },
+  "shadcn Dialog Import": {
+    "scope": "typescriptreact,javascriptreact,typescript,javascript",
+    "prefix": ["import-dialog", "idialog"],
+    "description": "Import shadcn Dialog pieces",
+    "body": [
+      "import {",
+      "\tDialog,",
+      "\tDialogContent,",
+      "\tDialogDescription,",
+      "\tDialogFooter,",
+      "\tDialogHeader,",
+      "\tDialogTitle,",
+      "\tDialogTrigger,",
+      "} from \"@/components/ui/dialog\""
+    ]
+  },
+  "shadcn Input + Label": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": ["shadcn-input", "sinput"],
+    "description": "shadcn Label + Input field",
+    "body": [
+      "<div className=\"grid gap-2\">",
+      "\t<Label htmlFor=\"${1:email}\">${2:Email}</Label>",
+      "\t<Input",
+      "\t\tid=\"$1\"",
+      "\t\ttype=\"${3|text,email,password,number|}\"",
+      "\t\tplaceholder=\"$4\"",
+      "\t\t$5",
+      "\t/>",
+      "</div>"
+    ]
+  },
+  "shadcn Input Import": {
+    "scope": "typescriptreact,javascriptreact,typescript,javascript",
+    "prefix": ["import-input", "iinput"],
+    "description": "Import shadcn Input and Label",
+    "body": [
+      "import { Input } from \"@/components/ui/input\"",
+      "import { Label } from \"@/components/ui/label\""
+    ]
+  },
+  "shadcn Badge": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": ["shadcn-badge", "sbadge"],
+    "description": "shadcn Badge",
+    "body": [
+      "<Badge variant=\"${1|default,secondary,outline,destructive|}\">$2</Badge>"
+    ]
+  },
+  "shadcn Badge Import": {
+    "scope": "typescriptreact,javascriptreact,typescript,javascript",
+    "prefix": ["import-badge", "ibadge"],
+    "description": "Import shadcn Badge",
+    "body": ["import { Badge } from \"@/components/ui/badge\""]
+  },
+  "shadcn Alert": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": ["shadcn-alert", "salert"],
+    "description": "shadcn Alert",
+    "body": [
+      "<Alert variant=\"${1|default,destructive|}\">",
+      "\t<AlertTitle>$2</AlertTitle>",
+      "\t<AlertDescription>$3</AlertDescription>",
+      "</Alert>"
+    ]
+  },
+  "shadcn Alert Import": {
+    "scope": "typescriptreact,javascriptreact,typescript,javascript",
+    "prefix": ["import-alert", "ialert"],
+    "description": "Import shadcn Alert pieces",
+    "body": [
+      "import { Alert, AlertDescription, AlertTitle } from \"@/components/ui/alert\""
+    ]
+  },
+  "shadcn Tabs": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": ["shadcn-tabs", "stabs"],
+    "description": "shadcn Tabs",
+    "body": [
+      "<Tabs defaultValue=\"${1:account}\" className=\"w-full\">",
+      "\t<TabsList>",
+      "\t\t<TabsTrigger value=\"$1\">$2</TabsTrigger>",
+      "\t\t<TabsTrigger value=\"${3:password}\">$4</TabsTrigger>",
+      "\t</TabsList>",
+      "\t<TabsContent value=\"$1\">$5</TabsContent>",
+      "\t<TabsContent value=\"$3\">$6</TabsContent>",
+      "</Tabs>"
+    ]
+  },
+  "shadcn Tabs Import": {
+    "scope": "typescriptreact,javascriptreact,typescript,javascript",
+    "prefix": ["import-tabs", "itabs"],
+    "description": "Import shadcn Tabs pieces",
+    "body": [
+      "import { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/components/ui/tabs\""
+    ]
+  },
+  "shadcn Select": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": ["shadcn-select", "sselect"],
+    "description": "shadcn Select",
+    "body": [
+      "<Select>",
+      "\t<SelectTrigger className=\"w-full\">",
+      "\t\t<SelectValue placeholder=\"$1\" />",
+      "\t</SelectTrigger>",
+      "\t<SelectContent>",
+      "\t\t<SelectItem value=\"${2:option-1}\">${3:Option 1}</SelectItem>",
+      "\t\t<SelectItem value=\"${4:option-2}\">${5:Option 2}</SelectItem>",
+      "\t</SelectContent>",
+      "</Select>"
+    ]
+  },
+  "shadcn Select Import": {
+    "scope": "typescriptreact,javascriptreact,typescript,javascript",
+    "prefix": ["import-select", "iselect"],
+    "description": "Import shadcn Select pieces",
+    "body": [
+      "import {",
+      "\tSelect,",
+      "\tSelectContent,",
+      "\tSelectItem,",
+      "\tSelectTrigger,",
+      "\tSelectValue,",
+      "} from \"@/components/ui/select\""
+    ]
+  },
+  "shadcn Sheet": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": ["shadcn-sheet", "ssheet"],
+    "description": "shadcn Sheet (slide-over)",
+    "body": [
+      "<Sheet>",
+      "\t<SheetTrigger asChild>",
+      "\t\t<Button variant=\"outline\">$1</Button>",
+      "\t</SheetTrigger>",
+      "\t<SheetContent side=\"${2|right,left,top,bottom|}\">",
+      "\t\t<SheetHeader>",
+      "\t\t\t<SheetTitle>$3</SheetTitle>",
+      "\t\t\t<SheetDescription>$4</SheetDescription>",
+      "\t\t</SheetHeader>",
+      "\t\t$5",
+      "\t</SheetContent>",
+      "</Sheet>"
+    ]
+  },
+  "shadcn Skeleton": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": ["shadcn-skeleton", "sskeleton"],
+    "description": "shadcn Skeleton loading placeholder",
+    "body": ["<Skeleton className=\"${1:h-4 w-[250px]}\" />"]
+  },
+  "shadcn Separator": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": ["shadcn-separator", "ssep"],
+    "description": "shadcn Separator",
+    "body": [
+      "<Separator orientation=\"${1|horizontal,vertical|}\" className=\"$2\" />"
+    ]
+  },
+  "cn Utility": {
+    "scope": "typescriptreact,javascriptreact,typescript,javascript",
+    "prefix": ["cn", "classname"],
+    "description": "cn() class merge helper",
+    "body": ["cn(\"$1\", ${2:className})"]
+  },
+  "cn Import": {
+    "scope": "typescriptreact,javascriptreact,typescript,javascript",
+    "prefix": ["import-cn", "icn"],
+    "description": "Import cn utility",
+    "body": ["import { cn } from \"cn\""]
+  },
+  "Lucide Icon Import": {
+    "scope": "typescriptreact,javascriptreact,typescript,javascript",
+    "prefix": ["import-icon", "ilucide"],
+    "description": "Import Lucide icon (shadcn icon library)",
+    "body": ["import { ${1:Plus} } from \"lucide-react\""]
+  },
+  "Tailwind Flex Center": {
+    "scope": "typescriptreact,javascriptreact,html",
+    "prefix": ["tw-flex-center", "tfc"],
+    "description": "Modern Tailwind flex center layout",
+    "body": ["className=\"flex items-center justify-center gap-${1:2}\""]
+  },
+  "Tailwind Stack": {
+    "scope": "typescriptreact,javascriptreact,html",
+    "prefix": ["tw-stack", "tstack"],
+    "description": "Modern Tailwind vertical stack with gap",
+    "body": ["className=\"flex flex-col gap-${1:4}\""]
+  },
+  "Tailwind Grid Responsive": {
+    "scope": "typescriptreact,javascriptreact,html",
+    "prefix": ["tw-grid", "tgrid"],
+    "description": "Modern responsive Tailwind grid",
+    "body": [
+      "className=\"grid grid-cols-1 gap-${1:4} sm:grid-cols-2 lg:grid-cols-${2:3}\""
+    ]
+  },
+  "Tailwind Container": {
+    "scope": "typescriptreact,javascriptreact,html",
+    "prefix": ["tw-container", "tcontainer"],
+    "description": "Modern page container with Tailwind",
+    "body": [
+      "className=\"mx-auto w-full max-w-${1|3xl,4xl,5xl,6xl,7xl|} px-4 sm:px-6 lg:px-8\""
+    ]
+  },
+  "Tailwind shadcn Surface": {
+    "scope": "typescriptreact,javascriptreact,html",
+    "prefix": ["tw-surface", "tsurface"],
+    "description": "shadcn semantic surface (bg/text/border tokens)",
+    "body": [
+      "className=\"rounded-lg border border-border bg-card text-card-foreground p-${1:4} shadow-sm\""
+    ]
+  },
+  "Tailwind Muted Text": {
+    "scope": "typescriptreact,javascriptreact,html",
+    "prefix": ["tw-muted", "tmuted"],
+    "description": "shadcn muted foreground text",
+    "body": ["className=\"text-sm text-muted-foreground\""]
+  },
+  "Tailwind Focus Ring": {
+    "scope": "typescriptreact,javascriptreact,html",
+    "prefix": ["tw-focus", "tfocus"],
+    "description": "Modern focus-visible ring using shadcn tokens",
+    "body": [
+      "className=\"outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50\""
+    ]
+  },
+  "React Client Component": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": ["rsc-client", "useclient"],
+    "description": "Next.js client component shell with shadcn-ready cn",
+    "body": [
+      "\"use client\"",
+      "",
+      "import { cn } from \"cn\"",
+      "",
+      "type ${1:Component}Props = {",
+      "\tclassName?: string",
+      "\t$2",
+      "}",
+      "",
+      "export function ${1:Component}({ className, $3 }: ${1:Component}Props) {",
+      "\treturn (",
+      "\t\t<div className={cn(\"$4\", className)}>",
+      "\t\t\t$5",
+      "\t\t</div>",
+      "\t)",
+      "}"
+    ]
+  },
+  "React Server Component": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": ["rsc-server", "servercomp"],
+    "description": "Next.js server component shell",
+    "body": [
+      "import { cn } from \"cn\"",
+      "",
+      "type ${1:Component}Props = {",
+      "\tclassName?: string",
+      "\t$2",
+      "}",
+      "",
+      "export function ${1:Component}({ className, $3 }: ${1:Component}Props) {",
+      "\treturn (",
+      "\t\t<section className={cn(\"$4\", className)}>",
+      "\t\t\t$5",
+      "\t\t</section>",
+      "\t)",
+      "}"
+    ]
+  }
+}

@@ -1,0 +1,509 @@
+{
+  "Next.js Page": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": ["npage", "next-page"],
+    "description": "App Router page.tsx",
+    "body": [
+      "export default function ${1:Page}() {",
+      "\treturn (",
+      "\t\t<div className=\"${2:space-y-4}\">",
+      "\t\t\t$0",
+      "\t\t</div>",
+      "\t)",
+      "}"
+    ]
+  },
+  "Next.js Page with Params": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": ["npage-params", "next-page-params"],
+    "description": "App Router async page with params (Promise)",
+    "body": [
+      "type ${1:Page}Props = {",
+      "\tparams: Promise<{ ${2:id}: string }>",
+      "\tsearchParams: Promise<{ [key: string]: string | string[] | undefined }>",
+      "}",
+      "",
+      "export default async function ${1:Page}({ params, searchParams }: ${1:Page}Props) {",
+      "\tconst { ${2:id} } = await params",
+      "\tconst query = await searchParams",
+      "",
+      "\treturn (",
+      "\t\t<div className=\"${3:space-y-4}\">",
+      "\t\t\t$0",
+      "\t\t</div>",
+      "\t)",
+      "}"
+    ]
+  },
+  "Next.js Layout": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": ["nlayout", "next-layout"],
+    "description": "App Router layout.tsx",
+    "body": [
+      "export default function ${1:Layout}({",
+      "\tchildren,",
+      "}: Readonly<{",
+      "\tchildren: React.ReactNode",
+      "}>) {",
+      "\treturn (",
+      "\t\t<section className=\"${2:flex flex-1 flex-col}\">",
+      "\t\t\t$0",
+      "\t\t\t{children}",
+      "\t\t</section>",
+      "\t)",
+      "}"
+    ]
+  },
+  "Next.js Loading": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": ["nloading", "next-loading"],
+    "description": "App Router loading.tsx",
+    "body": [
+      "export default function Loading() {",
+      "\treturn (",
+      "\t\t<div className=\"flex items-center justify-center p-8\">",
+      "\t\t\t$0",
+      "\t\t</div>",
+      "\t)",
+      "}"
+    ]
+  },
+  "Next.js Error": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": ["nerror", "next-error"],
+    "description": "App Router error.tsx (client)",
+    "body": [
+      "\"use client\"",
+      "",
+      "export default function Error({",
+      "\terror,",
+      "\treset,",
+      "}: {",
+      "\terror: Error & { digest?: string }",
+      "\treset: () => void",
+      "}) {",
+      "\treturn (",
+      "\t\t<div className=\"flex flex-col items-center gap-4 p-8\">",
+      "\t\t\t<p className=\"text-destructive\">${1:Something went wrong.}</p>",
+      "\t\t\t<button type=\"button\" onClick={() => reset()}>",
+      "\t\t\t\tTry again",
+      "\t\t\t</button>",
+      "\t\t\t$0",
+      "\t\t</div>",
+      "\t)",
+      "}"
+    ]
+  },
+  "Next.js Not Found": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": ["nnotfound", "next-not-found"],
+    "description": "App Router not-found.tsx",
+    "body": [
+      "import Link from \"next/link\"",
+      "",
+      "export default function NotFound() {",
+      "\treturn (",
+      "\t\t<div className=\"flex flex-col items-center gap-4 p-8\">",
+      "\t\t\t<h2 className=\"text-xl font-semibold\">${1:Not Found}</h2>",
+      "\t\t\t<p className=\"text-muted-foreground\">${2:Could not find requested resource}</p>",
+      "\t\t\t<Link href=\"${3:/}\">Return Home</Link>",
+      "\t\t\t$0",
+      "\t\t</div>",
+      "\t)",
+      "}"
+    ]
+  },
+  "Next.js Template": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": ["ntemplate", "next-template"],
+    "description": "App Router template.tsx",
+    "body": [
+      "export default function Template({ children }: { children: React.ReactNode }) {",
+      "\treturn <div className=\"${1:animate-in fade-in}\">{children}</div>",
+      "}"
+    ]
+  },
+  "Next.js Metadata": {
+    "scope": "typescriptreact,javascriptreact,typescript,javascript",
+    "prefix": ["nmeta", "next-metadata"],
+    "description": "export const metadata",
+    "body": [
+      "import type { Metadata } from \"next\"",
+      "",
+      "export const metadata: Metadata = {",
+      "\ttitle: \"${1:Title}\",",
+      "\tdescription: \"${2:Description}\",",
+      "}"
+    ]
+  },
+  "Next.js Generate Metadata": {
+    "scope": "typescriptreact,javascriptreact,typescript,javascript",
+    "prefix": ["ngenmeta", "next-generate-metadata"],
+    "description": "generateMetadata for dynamic routes",
+    "body": [
+      "import type { Metadata } from \"next\"",
+      "",
+      "type Props = {",
+      "\tparams: Promise<{ ${1:id}: string }>",
+      "}",
+      "",
+      "export async function generateMetadata({ params }: Props): Promise<Metadata> {",
+      "\tconst { ${1:id} } = await params",
+      "",
+      "\treturn {",
+      "\t\ttitle: \"${2:Title}\",",
+      "\t\tdescription: \"${3:Description}\",",
+      "\t}",
+      "}"
+    ]
+  },
+  "Next.js Generate Static Params": {
+    "scope": "typescriptreact,javascriptreact,typescript,javascript",
+    "prefix": ["ngenparams", "next-generate-static-params"],
+    "description": "generateStaticParams",
+    "body": [
+      "export async function generateStaticParams() {",
+      "\tconst items = ${1:[]}",
+      "",
+      "\treturn items.map((item) => ({",
+      "\t\t${2:id}: item.${2:id},",
+      "\t}))",
+      "}"
+    ]
+  },
+  "Next.js Route Handler GET": {
+    "scope": "typescript,javascript",
+    "prefix": ["nroute-get", "next-route-get"],
+    "description": "App Router route.ts GET handler",
+    "body": [
+      "import { NextResponse } from \"next/server\"",
+      "",
+      "export async function GET(request: Request) {",
+      "\tconst { searchParams } = new URL(request.url)",
+      "\tconst ${1:id} = searchParams.get(\"${1:id}\")",
+      "",
+      "\treturn NextResponse.json({ ${1:id} })",
+      "}"
+    ]
+  },
+  "Next.js Route Handler POST": {
+    "scope": "typescript,javascript",
+    "prefix": ["nroute-post", "next-route-post"],
+    "description": "App Router route.ts POST handler",
+    "body": [
+      "import { NextResponse } from \"next/server\"",
+      "",
+      "export async function POST(request: Request) {",
+      "\tconst body = await request.json()",
+      "",
+      "\treturn NextResponse.json({ ok: true, body }, { status: ${1:201} })",
+      "}"
+    ]
+  },
+  "Next.js Route Handler Full": {
+    "scope": "typescript,javascript",
+    "prefix": ["nroute", "next-route"],
+    "description": "App Router route.ts with GET + POST",
+    "body": [
+      "import { NextResponse } from \"next/server\"",
+      "",
+      "export async function GET() {",
+      "\treturn NextResponse.json({ ${1:data}: [] })",
+      "}",
+      "",
+      "export async function POST(request: Request) {",
+      "\tconst body = await request.json()",
+      "\treturn NextResponse.json({ ok: true, body }, { status: 201 })",
+      "}"
+    ]
+  },
+  "Next.js Dynamic Route Params": {
+    "scope": "typescript,javascript",
+    "prefix": ["nroute-params", "next-route-params"],
+    "description": "route.ts with dynamic params Promise",
+    "body": [
+      "import { NextResponse } from \"next/server\"",
+      "",
+      "type Context = {",
+      "\tparams: Promise<{ ${1:id}: string }>",
+      "}",
+      "",
+      "export async function GET(_request: Request, context: Context) {",
+      "\tconst { ${1:id} } = await context.params",
+      "",
+      "\treturn NextResponse.json({ ${1:id} })",
+      "}"
+    ]
+  },
+  "Next.js Server Action": {
+    "scope": "typescriptreact,javascriptreact,typescript,javascript",
+    "prefix": ["naction", "next-action"],
+    "description": "Server Action with \"use server\"",
+    "body": [
+      "\"use server\"",
+      "",
+      "export async function ${1:submitAction}(formData: FormData) {",
+      "\tconst ${2:value} = formData.get(\"${2:value}\")",
+      "",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Next.js Server Action File": {
+    "scope": "typescript,javascript",
+    "prefix": ["nactions", "next-actions-file"],
+    "description": "actions.ts server actions module",
+    "body": [
+      "\"use server\"",
+      "",
+      "import { revalidatePath } from \"next/cache\"",
+      "import { redirect } from \"next/navigation\"",
+      "",
+      "export async function ${1:createItem}(formData: FormData) {",
+      "\tconst ${2:name} = String(formData.get(\"${2:name}\") ?? \"\")",
+      "",
+      "\t$0",
+      "",
+      "\trevalidatePath(\"${3:/}\")",
+      "\tredirect(\"${3:/}\")",
+      "}"
+    ]
+  },
+  "Next.js Link": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": ["nlink", "next-link"],
+    "description": "next/link",
+    "body": [
+      "<Link href=\"${1:/}\" className=\"${2:text-primary hover:underline}\">",
+      "\t$3",
+      "</Link>"
+    ]
+  },
+  "Next.js Link Import": {
+    "scope": "typescriptreact,javascriptreact,typescript,javascript",
+    "prefix": ["import-link", "ilink"],
+    "description": "Import next/link",
+    "body": ["import Link from \"next/link\""]
+  },
+  "Next.js Image": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": ["nimage", "next-image"],
+    "description": "next/image",
+    "body": [
+      "<Image",
+      "\tsrc=\"${1:/image.png}\"",
+      "\talt=\"${2:description}\"",
+      "\twidth={${3:800}}",
+      "\theight={${4:600}}",
+      "\tclassName=\"${5:rounded-lg object-cover}\"",
+      "\t$6",
+      "/>"
+    ]
+  },
+  "Next.js Image Import": {
+    "scope": "typescriptreact,javascriptreact,typescript,javascript",
+    "prefix": ["import-image", "iimage"],
+    "description": "Import next/image",
+    "body": ["import Image from \"next/image\""]
+  },
+  "Next.js useRouter": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": ["nrouter", "next-use-router"],
+    "description": "useRouter from next/navigation",
+    "body": [
+      "const router = useRouter()",
+      "router.${1|push,replace,refresh,back|}(\"${2:/}\")"
+    ]
+  },
+  "Next.js useRouter Import": {
+    "scope": "typescriptreact,javascriptreact,typescript,javascript",
+    "prefix": ["import-router", "irouter"],
+    "description": "Import useRouter",
+    "body": ["import { useRouter } from \"next/navigation\""]
+  },
+  "Next.js usePathname": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": ["npathname", "next-use-pathname"],
+    "description": "usePathname hook",
+    "body": ["const pathname = usePathname()"]
+  },
+  "Next.js useSearchParams": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": ["nsearchparams", "next-use-search-params"],
+    "description": "useSearchParams hook",
+    "body": [
+      "const searchParams = useSearchParams()",
+      "const ${1:q} = searchParams.get(\"${1:q}\")"
+    ]
+  },
+  "Next.js useParams": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": ["nparams", "next-use-params"],
+    "description": "useParams hook",
+    "body": [
+      "const params = useParams<{ ${1:id}: string }>()",
+      "const ${1:id} = params.${1:id}"
+    ]
+  },
+  "Next.js Navigation Import": {
+    "scope": "typescriptreact,javascriptreact,typescript,javascript",
+    "prefix": ["import-nav", "inav"],
+    "description": "Import next/navigation hooks",
+    "body": [
+      "import { ${1|useRouter,usePathname,useSearchParams,useParams,redirect,notFound|} } from \"next/navigation\""
+    ]
+  },
+  "Next.js redirect": {
+    "scope": "typescriptreact,javascriptreact,typescript,javascript",
+    "prefix": ["nredirect", "next-redirect"],
+    "description": "redirect() from next/navigation",
+    "body": ["redirect(\"${1:/}\")"]
+  },
+  "Next.js notFound": {
+    "scope": "typescriptreact,javascriptreact,typescript,javascript",
+    "prefix": ["n404", "next-notfound-call"],
+    "description": "notFound() call",
+    "body": ["notFound()"]
+  },
+  "Next.js revalidatePath": {
+    "scope": "typescript,javascript",
+    "prefix": ["nrevalidate", "next-revalidate-path"],
+    "description": "revalidatePath from next/cache",
+    "body": [
+      "import { revalidatePath } from \"next/cache\"",
+      "",
+      "revalidatePath(\"${1:/}\")"
+    ]
+  },
+  "Next.js revalidateTag": {
+    "scope": "typescript,javascript",
+    "prefix": ["nrevalidatetag", "next-revalidate-tag"],
+    "description": "revalidateTag from next/cache",
+    "body": [
+      "import { revalidateTag } from \"next/cache\"",
+      "",
+      "revalidateTag(\"${1:tag}\")"
+    ]
+  },
+  "Next.js cookies": {
+    "scope": "typescript,javascript",
+    "prefix": ["ncookies", "next-cookies"],
+    "description": "cookies() from next/headers",
+    "body": [
+      "import { cookies } from \"next/headers\"",
+      "",
+      "const cookieStore = await cookies()",
+      "const ${1:token} = cookieStore.get(\"${1:token}\")"
+    ]
+  },
+  "Next.js headers": {
+    "scope": "typescript,javascript",
+    "prefix": ["nheaders", "next-headers"],
+    "description": "headers() from next/headers",
+    "body": [
+      "import { headers } from \"next/headers\"",
+      "",
+      "const headersList = await headers()",
+      "const ${1:userAgent} = headersList.get(\"${2:user-agent}\")"
+    ]
+  },
+  "Next.js Client Component": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": ["nclient", "use-client"],
+    "description": "Client component with Next.js navigation",
+    "body": [
+      "\"use client\"",
+      "",
+      "import { useRouter } from \"next/navigation\"",
+      "import { cn } from \"cn\"",
+      "",
+      "type ${1:Component}Props = {",
+      "\tclassName?: string",
+      "\t$2",
+      "}",
+      "",
+      "export function ${1:Component}({ className, $3 }: ${1:Component}Props) {",
+      "\tconst router = useRouter()",
+      "",
+      "\treturn (",
+      "\t\t<div className={cn(\"$4\", className)}>",
+      "\t\t\t$0",
+      "\t\t</div>",
+      "\t)",
+      "}"
+    ]
+  },
+  "Next.js Font Google": {
+    "scope": "typescriptreact,javascriptreact,typescript,javascript",
+    "prefix": ["nfont", "next-font"],
+    "description": "next/font/google setup",
+    "body": [
+      "import { ${1:Geist} } from \"next/font/google\"",
+      "",
+      "const ${2:font} = ${1:Geist}({",
+      "\tvariable: \"--font-${3:geist-sans}\",",
+      "\tsubsets: [\"latin\"],",
+      "})"
+    ]
+  },
+  "Next.js Script": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": ["nscript", "next-script"],
+    "description": "next/script",
+    "body": [
+      "import Script from \"next/script\"",
+      "",
+      "<Script src=\"${1:/script.js}\" strategy=\"${2|afterInteractive,lazyOnload,beforeInteractive|}\" />"
+    ]
+  },
+  "React useState": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": ["ustate", "use-state"],
+    "description": "useState hook",
+    "body": [
+      "const [${1:value}, set${1/(.*)/${1:/capitalize}/}] = useState${2:<${3:string}>}(${4:\"\"})"
+    ]
+  },
+  "React useEffect": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": ["ueffect", "use-effect"],
+    "description": "useEffect hook",
+    "body": [
+      "useEffect(() => {",
+      "\t$0",
+      "}, [${1:}])"
+    ]
+  },
+  "React useRef": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": ["uref", "use-ref"],
+    "description": "useRef hook",
+    "body": [
+      "const ${1:ref} = useRef${2:<${3:HTMLDivElement} | null>}(${4:null})"
+    ]
+  },
+  "React Import Hooks": {
+    "scope": "typescriptreact,javascriptreact,typescript,javascript",
+    "prefix": ["import-react", "ireact"],
+    "description": "Import React hooks",
+    "body": [
+      "import { ${1|useState,useEffect,useRef,useMemo,useCallback,useTransition,useDeferredValue,useId|} } from \"react\""
+    ]
+  },
+  "Fetch in Server Component": {
+    "scope": "typescriptreact,javascriptreact,typescript,javascript",
+    "prefix": ["nfetch", "next-fetch"],
+    "description": "fetch with Next.js cache options",
+    "body": [
+      "const res = await fetch(\"${1:/api/...}\", {",
+      "\t${2|cache: \"force-cache\",cache: \"no-store\",next: { revalidate: 60 }|},",
+      "})",
+      "",
+      "if (!res.ok) {",
+      "\tthrow new Error(\"${3:Failed to fetch}\")",
+      "}",
+      "",
+      "const ${4:data} = await res.json()"
+    ]
+  }
+}
