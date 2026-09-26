@@ -1,5 +1,6 @@
 {
   // Enable auto formatting and indentation on save
+  "explorer.compactFolders": false,
   "editor.formatOnSave": true,
   "editor.autoIndent": "full",
   "editor.detectIndentation": false,

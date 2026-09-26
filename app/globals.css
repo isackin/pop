@@ -139,8 +139,8 @@
     --typeset-font-heading: var(--font-heading);
     --typeset-font-mono: var(--font-mono);
     --typeset-size: 1em;
-    --typeset-leading: 1.75; /* Leading: Regular (1.75) */
-    --typeset-flow: 1.25em;  /* Flow: Regular (1.25em) */
-    max-width: 80ch;         /* Measure: 80ch */
+    --typeset-leading: 1.75;
+    --typeset-flow: 1.25em;
+    max-width: 80ch;
   }
 }
